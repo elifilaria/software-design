@@ -22,9 +22,9 @@ public:
   void display(ostream& os){
   	char* astStars = new char[6];
   	if (numStars <= 1) astStars[0] = '*';
-  	else if (numStars = 2) {astStars[0] = '*'; astStars[1] = '*';}
-  	else if (numStars = 3) {astStars[0] = '*'; astStars[1] = '*'; astStars[2] = '*';}
-  	else if (numStars = 4) {astStars[0] = '*'; astStars[1] = '*'; astStars[2] = '*'; astStars[3] = '*';}
+  	else if (numStars == 2) {astStars[0] = '*'; astStars[1] = '*';}
+  	else if (numStars == 3) {astStars[0] = '*'; astStars[1] = '*'; astStars[2] = '*';}
+  	else if (numStars == 4) {astStars[0] = '*'; astStars[1] = '*'; astStars[2] = '*'; astStars[3] = '*';}
   	else if (numStars >= 5) {astStars[0] = '*'; astStars[1] = '*'; astStars[2] = '*'; astStars[3] = '*'; astStars[4] = '*';}
   	cout << id << ": " << astStars << endl;
   }
