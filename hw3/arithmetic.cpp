@@ -14,5 +14,5 @@ int main()
   cout << a << endl;
   cout << b << endl;
   cout << c << endl;
-  cout << d << ednl;
+  cout << d << endl;
 }
