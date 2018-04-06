@@ -8,7 +8,6 @@ class IntArray {
 
   int* elt;
   int size;
-  char* director;
   int DEFAULT_SIZE=4;
 
 public:
