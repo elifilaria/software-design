@@ -1,0 +1,41 @@
+test:  Dog_driver OwnedDog_driver RegDog_driver DogArrayP_driver
+	./Dog_driver  |  diff  -  Dog_driver.out
+	./RegDog_driver  |  diff  -  RegDog_driver.out
+	./DogArrayP_driver  |  diff  -  DogArrayP_driver.out
+	./OwnedDog_driver  |  diff  -  OwnedDog_driver.out
+
+Dog_driver:  Dog.o Dog_driver.o
+	g++ -g -Wall -std=c++11 -o Dog_driver Dog.o Dog_driver.o
+
+Dog_driver.o:  Dog_driver.cpp Dog.o
+	g++ -g -Wall -std=c++11 -c Dog_driver.cpp
+
+Dog.o:  Dog.cpp Dog.h
+	g++ -g -Wall -std=c++11 -c Dog.cpp
+
+RegDog_driver:  RegDog.o RegDog_driver.o
+	g++ -g -Wall -std=c++11 -o RegDog_driver RegDog.o RegDog_driver.o Dog.o
+
+RegDog_driver.o:  RegDog_driver.cpp RegDog.o
+	g++ -g -Wall -std=c++11 -c RegDog_driver.cpp
+
+RegDog.o:  RegDog.cpp RegDog.h
+	g++ -g -Wall -std=c++11 -c RegDog.cpp
+
+DogArrayP_driver:  DogArrayP.o DogArrayP_driver.o
+	g++ -g -Wall -std=c++11 -o DogArrayP_driver DogArrayP.o DogArrayP_driver.o Dog.o
+
+DogArrayP_driver.o:  DogArrayP_driver.cpp DogArrayP.o
+	g++ -g -Wall -std=c++11 -c DogArrayP_driver.cpp
+
+DogArrayP.o:  DogArrayP.cpp DogArrayP.h
+	g++ -g -Wall -std=c++11 -c DogArrayP.cpp
+
+OwnedDog_driver:  OwnedDog.o OwnedDog_driver.o
+	g++ -g -Wall -std=c++11 -o OwnedDog_driver OwnedDog.o OwnedDog_driver.o Dog.o
+
+OwnedDog_driver.o:  OwnedDog_driver.cpp OwnedDog.o
+	g++ -g -Wall -std=c++11 -c OwnedDog_driver.cpp
+
+OwnedDog.o:  OwnedDog.cpp OwnedDog.h
+	g++ -g -Wall -std=c++11 -c OwnedDog.cpp
